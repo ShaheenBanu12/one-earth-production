@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ blog.meta_title }}
+{% endblock %}
+
+{% block meta_description %}
+    {{ blog.meta_description }}
+{% endblock %}
+
+{% block og_title %}
+    {{ blog.meta_title }}
+{% endblock %}
+
+{% block og_description %}
+    {{ blog.meta_description }}
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container-lg">
+
+        <h1 class="font-display fw-bold mb-3">
+            {{ blog.title }}
+        </h1>
+
+        <p class="text-muted small mb-4">
+            Published on {{ blog.created_at|date:"F d, Y" }}
+        </p>
+
+        {% if blog.featured_image %}
+            <img src="{{ blog.featured_image.url }}"
+                 class="img-fluid rounded mb-4"
+                 alt="{{ blog.title }}">
+        {% endif %}
+
+        <div class="fs-5" style="line-height: 1.8;">
+            {{ blog.content|linebreaks }}
+        </div>
+
+        <hr class="my-5">
+
+        <a href="{% url 'blog_list' %}" class="btn btn-outline-success">
+            ← Back to Articles
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}
