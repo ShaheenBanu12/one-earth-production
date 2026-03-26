@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY","fallback-secret-key")
 
 DEBUG = os.getenv("DEBUG","False") == "True"
 
-ALLOWED_HOSTS = ['one-earth.onrendor.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['one-earth.onrender.com','127.0.0.1','localhost']
 
 
 # ======================================================
