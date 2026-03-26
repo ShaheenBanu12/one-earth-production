@@ -25,6 +25,8 @@ from django.views.generic import TemplateView
 
 from core.sitemaps import BlogSitemap
 from core import views
+from django.urls import include
+
 
 
 # ==========================================
@@ -56,6 +58,7 @@ urlpatterns = [
              template_name="robots.txt",
              content_type="text/plain"
          )),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 
